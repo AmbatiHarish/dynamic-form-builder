@@ -38,7 +38,7 @@ const Toolbox = () => {
         <DndProvider backend={HTML5Backend}>
             <div className="Toolbox">
                 {elements.map(item => (
-                    <ToolboxItem type={item.type} label={item.label} />
+                    <ToolboxItem key={item.type} type={item.type} label={item.label} />
                 ))}
             </div>
         </DndProvider>
