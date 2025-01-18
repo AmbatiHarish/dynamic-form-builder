@@ -30,7 +30,6 @@ const PropertiesPanel = ({ selectedElement, onUpdate }) => {
                 </label>
             </div>
 
-            {/* Conditional fields based on element type */}
             {selectedElement.type === "text" && (
                 <div style={{ marginBottom: "10px" }}>
                     <label>
