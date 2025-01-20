@@ -1,0 +1,10 @@
+.PropertiesPanel {
+    padding: 10px;
+    border: 2px solid #ccc;
+    width: 30%;
+}
+
+.PropertiesPanelElement {
+    margin-left: 10px;
+    width: 200px;
+}

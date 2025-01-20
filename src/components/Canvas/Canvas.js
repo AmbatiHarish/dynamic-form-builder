@@ -1,5 +1,6 @@
 import React from "react";
 import { useDrop } from "react-dnd";
+import "./Canvas.css";
 
 const Canvas = ({ formElements, setFormElements, onSelectElement }) => {
     const [{ isOver }, drop] = useDrop(() => ({
@@ -32,14 +33,8 @@ const Canvas = ({ formElements, setFormElements, onSelectElement }) => {
     return (
         <div
             ref={drop}
-            style={{
-                flex: 1,
-                minHeight: "400px",
-                border: "2px dashed #ccc",
-                padding: "10px",
-                backgroundColor: isOver ? "#f9f9f9" : "white",
-                overflowY: "auto",
-            }}
+            className="Canvas"
+            style={{ backgroundColor: isOver ? "#f9f9f9" : "white" }}
         >
             <h3>Canvas</h3>
             {formElements.map((el) => (
@@ -60,23 +55,21 @@ const Canvas = ({ formElements, setFormElements, onSelectElement }) => {
                             type="text"
                             placeholder={el.placeholder}
                             style={{ width: "100%", marginTop: "5px" }}
-                            disabled
                         />
                     )}
                     {el.type === "textarea" && (
                         <textarea
                             placeholder={el.placeholder}
                             style={{ width: "100%", marginTop: "5px" }}
-                            disabled
                         />
                     )}
                     {el.type === "checkbox" && (
                         <div style={{ marginTop: "5px" }}>
-                            <input type="checkbox" disabled checked={el.checked} /> {el.label}
+                            <input type="checkbox" checked={el.checked} /> {el.label}
                         </div>
                     )}
                     {el.type === "select" && (
-                        <select style={{ width: "100%", marginTop: "5px" }} disabled>
+                        <select style={{ width: "100%", marginTop: "5px" }}>
                             {el.options.map((option, idx) => (
                                 <option key={idx} value={option}>
                                     {option}

@@ -1,9 +1,10 @@
 import React from "react";
+import "./PropertiesPanel.css";
 
 const PropertiesPanel = ({ selectedElement, onUpdate }) => {
     // If no element is selected, display a placeholder message
     if (!selectedElement)
-        return <div style={{ padding: "10px" }}>Select an element to edit its properties</div>;
+        return <div style={{ padding: "10px", border: "2px solid #ccc" }}>Select an element to edit its properties</div>;
 
     // Handle property changes and notify the parent component
     const handleChange = (e) => {
@@ -14,7 +15,7 @@ const PropertiesPanel = ({ selectedElement, onUpdate }) => {
     };
 
     return (
-        <div style={{ padding: "10px", border: "1px solid #ccc", minWidth: "300px" }}>
+        <div className="PropertiesPanel">
             <h3>Edit Properties</h3>
 
             <div style={{ marginBottom: "10px" }}>
@@ -25,7 +26,7 @@ const PropertiesPanel = ({ selectedElement, onUpdate }) => {
                         name="label"
                         value={selectedElement.label || ""}
                         onChange={handleChange}
-                        style={{ marginLeft: "10px", width: "100%" }}
+                        className="PropertiesPanelElement"
                     />
                 </label>
             </div>
@@ -39,7 +40,7 @@ const PropertiesPanel = ({ selectedElement, onUpdate }) => {
                             name="placeholder"
                             value={selectedElement.placeholder || ""}
                             onChange={handleChange}
-                            style={{ marginLeft: "10px", width: "100%" }}
+                            className="PropertiesPanelElement"
                         />
                     </label>
                 </div>
@@ -59,7 +60,7 @@ const PropertiesPanel = ({ selectedElement, onUpdate }) => {
                                     options: e.target.value.split(",").map((opt) => opt.trim()),
                                 })
                             }
-                            style={{ marginLeft: "10px", width: "100%" }}
+                            className="PropertiesPanelElement"
                         />
                     </label>
                 </div>

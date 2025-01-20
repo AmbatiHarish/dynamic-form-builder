@@ -1,5 +1,6 @@
 import { DndProvider, useDrag } from "react-dnd";
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import './Toolbox.css';
 
 const ToolboxItem = ({ type, label }) => {
     const [{ isDragging }, drag] = useDrag(() => ({
@@ -18,7 +19,8 @@ const ToolboxItem = ({ type, label }) => {
                 cursor: "grab",
                 padding: "10px",
                 border: "1px solid #ccc",
-                marginBottom: "10px",
+                margin: "10px",
+                borderRadius: "6px",
             }}
         >
             {label}

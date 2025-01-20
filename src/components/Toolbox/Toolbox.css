@@ -1,0 +1,7 @@
+.Toolbox {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #ccc;
+}
